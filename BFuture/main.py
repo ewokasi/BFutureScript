@@ -17,8 +17,8 @@ def cur_price():
 def avg_price():
     return float(client.avg_price("BNBBUSD").get("price"))
 
-client = Spot(key="mtsLUfoBVpcINTrWzfvut7zcplxHPYwXeJzXKwXUYXMXPWVbdeolf5sMRFfMswV1",
-              secret="T8cwg8zW3MgSQbBsHTyzo5qArRcV4TWymjOhqyhIWDEedczgKauWd0UCJ2jG1Dht")
+client = Spot(key="############################",
+              secret="############################")
 
 if client.get_open_orders("BNBBUSD")!=[]:   #Closing all open orders
     client.cancel_open_orders("BNBBUSD")
@@ -35,7 +35,7 @@ if bnb_amount*cur_price()> busd_amount:     #Deciding our to buy or to sell stat
     holded = 1
 else:
     holded = 0
-up_c = 1.0035 #trade mults
+up_c = 1.0024 #trade mults
 low_c=0.998
 
 if holded == 1:                             #Setting values for first trades
@@ -70,7 +70,7 @@ while 1:
                 'side': 'BUY',
                 'type': 'LIMIT',
                 'timeInForce': 'GTC',
-                'quantity': round((busd_amount/current_price)-0.0006, 3),
+                'quantity': round((busd_amount/current_price)-0.0002, 3),
                 'price': current_price
             }
 
@@ -108,7 +108,7 @@ while 1:
                 error.status_code, error.error_code, error.error_message
             )
         )
-    if lastprice*0.97>current_price:
+    if lastprice*0.99>current_price:
         params = {
             'symbol': 'BNBBUSD',
             'side': 'SELL',
