@@ -6,8 +6,6 @@ import datetime
 import logging
 
 
-# mtsLUfoBVpcINTrWzfvut7zcplxHPYwXeJzXKwXUYXMXPWVbdeolf5sMRFfMswV1
-# T8cwg8zW3MgSQbBsHTyzo5qArRcV4TWymjOhqyhIWDEedczgKauWd0UCJ2jG1Dht
 
 
 def cur_price():
